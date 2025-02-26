@@ -48,7 +48,7 @@ unibuild((u: Builder) => {
     input: 'data/scales.ts',
     outfile: 'src/scales.ts',
     build: buildScales,
-    command: ({ outfile }) => `yarn eslint ${outfile} --fix`,
+    command: ({ outfile }) => `bun eslint ${outfile} --fix`,
   });
 
   const chordParser = u.asset('chordParser', {
@@ -147,13 +147,13 @@ unibuild((u: Builder) => {
 
   u.lint('eslint', {
     requires: codeGeneratedAssets,
-    command: 'yarn eslint .',
-    autofixCommand: 'yarn eslint . --fix',
+    command: 'bun eslint .',
+    autofixCommand: 'bun eslint . --fix',
   });
 
-  u.test('jest', {
+  u.test('test', {
     requires: codeGeneratedAssets,
-    command: 'yarn jest',
+    command: 'bun test',
   });
 
   // ci = install, build, lint, test, buildRelease

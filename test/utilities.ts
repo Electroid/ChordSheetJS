@@ -28,6 +28,9 @@ import {
   ChordLyricsPair, Composite, Line, Literal, NONE, Paragraph, Song, Tag, Ternary,
 } from '../src';
 
+// https://github.com/oven-sh/bun/issues/12034
+import { it } from '@jest/globals';
+
 export function heredoc(strings: TemplateStringsArray, ...values: any[]): string {
   return theredoc(strings, ...values);
 }

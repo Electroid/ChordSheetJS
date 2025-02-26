@@ -14,10 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Enable Corepack
-        run: corepack enable
       - name: Build
-        run: yarn install && yarn build:release
+        run: bun install && bun run build:release
       - name: Test
         run: cat lib/bundle.js
       - name: Create release
@@ -25,7 +23,7 @@ jobs:
       - name: Upload release assets
         run: gh release upload "$tag" lib/bundle.js lib/bundle.min.js
       - name: Generate typedoc
-        run: yarn typedoc
+        run: bun run typedoc
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3

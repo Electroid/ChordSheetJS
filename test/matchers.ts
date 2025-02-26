@@ -1,3 +1,6 @@
+// https://github.com/oven-sh/bun/issues/12034
+import { expect } from '@jest/globals';
+
 import print from 'print';
 
 import {
@@ -163,7 +166,6 @@ function toBeSoftLineBreak(received) {
   return toBeClassInstanceWithProperties(received, SoftLineBreak, {});
 }
 
-// eslint-disable-next-line no-undef
 expect.extend({
   toBeChordLyricsPair,
   toBeComment,
