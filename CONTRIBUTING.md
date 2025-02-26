@@ -11,7 +11,7 @@ Are you trying to make changes to `README.md`? Wait! `README.md` is a auto-gener
   - the api docs are generated from JSdoc comment embedded in the code, so changing those
     comments will result in API doc changes.
 
-When your changes are complete, be sure to run `yarn readme` to regenerate `README.md` and commit the updated `README.md` _together_ with the `INTRO.md` changes and/or API doc changes.
+When your changes are complete, be sure to run `bun readme` to regenerate `README.md` and commit the updated `README.md` _together_ with the `INTRO.md` changes and/or API doc changes.
 
 ## Pull request guidelines
 
@@ -31,7 +31,7 @@ However, the better your PR meets these guidelines the sooner it will get merged
 
 ## Get started
 
-Ensure your have NodeJS and Yarn on your machine. The [CI workflow][ci_workflow] lists the NodeJS versions that
+Ensure your have Bun on your machine. The [CI workflow][ci_workflow] lists the NodeJS versions that
 are expected to work.
 
 [ci_workflow]: https://github.com/martijnversluis/ChordSheetJS/blob/master/.github/workflows/ci.yml#L17
@@ -40,24 +40,17 @@ Fork, then clone the repo:
 
     git clone git@github.com:your-username/ChordSheetJS.git
 
-ChordSheetJS uses Yarn 4. For that to work, Corepack need to be enabled:
-
-    corepack enable
-
-⚠️ NB: In my experience this only guaranteed to work when using Node's Yarn.
-   Yarn installed by an external package manager (like Homebrew) will/might not work.
-
 Install the required node modules:
 
-    yarn install
+    bun install
 
 Make sure the tests pass:
 
-    yarn test
+    bun test
 
 Make your change. Add tests for your change. Make the tests pass:
 
-    yarn test
+    bun test
 
 Push to your fork and [submit a pull request][pr].
 

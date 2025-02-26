@@ -43,7 +43,6 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-jest": "^28.8.3",
     "globals": "^16.0.0",
-    "jest": "^27.0.1",
     "parcel": "^2.13.3",
     "peggy": "^4.0.2",
     "pegjs-backtrace": "^0.2.1",
@@ -51,8 +50,6 @@
     "puppeteer": "^24.0.0",
     "shx": "^0.3.4",
     "theredoc": "^1.0.0",
-    "ts-jest": "^29.2.3",
-    "ts-node": "^10.9.2",
     "ts-pegjs": "^3.0.0",
     "tsx": "^4.10.5",
     "typedoc": "^0.27.1",
@@ -60,18 +57,17 @@
     "typescript-eslint": "^8.6.0"
   },
   "scripts": {
-    "build": "yarn unibuild",
-    "build:release": "yarn unibuild --force --release",
-    "ci": "yarn install && yarn unibuild ci",
-    "debug:chord": "yarn build && tsx script/debug_parser.ts chord",
-    "debug:chordpro": "yarn build && tsx script/debug_parser.ts chord_pro",
-    "debug:chords-over-words": "yarn build && tsx script/debug_parser.ts chords_over_words --include-chord-grammar",
+    "build": "bun unibuild",
+    "build:release": "bun unibuild --force --release",
+    "ci": "bun unibuild ci",
+    "debug:chord": "bun run build && bun script/debug_parser.ts chord",
+    "debug:chordpro": "bun run build && bun script/debug_parser.ts chord_pro",
+    "debug:chords-over-words": "bun run build && bun script/debug_parser.ts chords_over_words --include-chord-grammar",
     "eslint": "node_modules/.bin/eslint",
-    "lint": "yarn unibuild lint",
-    "prepare": "yarn install && yarn build",
-    "release": "yarn unibuild release",
-    "test": "yarn unibuild lint && yarn unibuild test",
-    "unibuild": "tsx ./unibuild.ts"
-  },
-  "packageManager": "yarn@4.2.2"
+    "lint": "bun unibuild lint",
+    "prepare": "bun run build",
+    "release": "bun unibuild release",
+    "test": "bun unibuild lint && bun unibuild test",
+    "unibuild": "bun unibuild.ts"
+  }
 }

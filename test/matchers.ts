@@ -1,3 +1,6 @@
+// https://github.com/oven-sh/bun/issues/12034
+import { expect } from '@jest/globals';
+
 import print from 'print';
 
 import {
