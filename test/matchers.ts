@@ -166,7 +166,6 @@ function toBeSoftLineBreak(received) {
   return toBeClassInstanceWithProperties(received, SoftLineBreak, {});
 }
 
-// eslint-disable-next-line no-undef
 expect.extend({
   toBeChordLyricsPair,
   toBeComment,
